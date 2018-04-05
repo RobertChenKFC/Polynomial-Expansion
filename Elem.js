@@ -54,8 +54,8 @@ class Elem {
     toLatex(first = false) {
         let l = "";
         if(!first && this.coeff.q > 0) l += "+";
-        if(this.coeff.q !== 0) {
-            if(this.coeff.q !== this.coeff.p) l += this.coeff.toLatex();
+        if(this.pow === 0 || this.coeff.q !== 0) {
+            if(this.pow === 0 || this.coeff.q !== this.coeff.p) l += this.coeff.toLatex();
             if(this.pow !== 0) {
                 l += "x";
                 if(this.pow !== 1) l += "^" + this.pow.toString();
