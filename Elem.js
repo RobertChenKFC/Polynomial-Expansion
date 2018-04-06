@@ -4,8 +4,15 @@ class Elem {
             if(input.indexOf("x") === -1) this.pow = 0;
             else if(input.indexOf("^") === -1) this.pow = 1;
             input = input.replace("^", "").split("x");
-            this.coeff = new Frac(input[0]);
-            if(this.pow === undefined) this.pow = parseInt(input[1]);
+            if(input[0].length !== 0) {
+                this.coeff = new Frac(input[0]);
+                if(this.pow === undefined) this.pow = parseInt(input[1]);
+            }
+            else {
+                this.coeff = new Frac("1");
+                this.pow = 1;
+            }
+
         }
         else {
             this.coeff = new Frac();
